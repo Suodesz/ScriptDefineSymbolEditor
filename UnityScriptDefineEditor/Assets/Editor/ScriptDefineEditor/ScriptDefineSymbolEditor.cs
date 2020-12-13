@@ -8,7 +8,7 @@ namespace Suodesz.ScriptDefineEditor
 {
     public class ScriptDefineSymbolEditor : EditorWindow
     {  
-        private List<Define> defines;
+        private List<DefineSymbol> defines;
         private bool waitCompile;
         private ScriptDefineSymbol targetDefineSymbol;
         private BuildTarget currentBuildTarget;
@@ -60,7 +60,7 @@ namespace Suodesz.ScriptDefineEditor
             if (defines == null)
             {
                 string defineAssetPath = GetDefineAssetPath();
-                var assets = (DefineAsset)AssetDatabase.LoadAssetAtPath(defineAssetPath, typeof(DefineAsset));
+                var assets = (DefineSymbolAsset)AssetDatabase.LoadAssetAtPath(defineAssetPath, typeof(DefineSymbolAsset));
                 defines = assets.defines;
                 RefreshDefineStatus();
             }
@@ -86,7 +86,7 @@ namespace Suodesz.ScriptDefineEditor
             }
         }
 
-        void BuildContents(Define group)
+        void BuildContents(DefineSymbol group)
         {
             using (new EditorGUILayout.VerticalScope("box"))
             {

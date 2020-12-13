@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEditor;
 using System;
 using System.Linq;
@@ -35,7 +33,7 @@ namespace Suodesz.ScriptDefineEditor
             SetScriptingDefineSymbol();
         }
 
-        public void Apply(IEnumerable<Define> addedDefines)
+        public void Apply(IEnumerable<DefineSymbol> addedDefines)
         {
             var currentDeines = defines;
             bool isChanged = false;
